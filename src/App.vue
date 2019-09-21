@@ -12,17 +12,14 @@ export default {
   data() {
     return {
       titulo: "Alura Pic",
-      fotos: [
-        {
-          url: "https://www.petz.com.br/blog/wp-content/uploads/2019/04/como-saber-se-o-cachorro-esta-com-febre-doencas.jpg",
-          titulo: "cachorro"
-        },
-        {
-          url: "https://www.petlove.com.br/dicas/wp-content/uploads/2018/05/golden-idoso.jpg",
-          titulo: "cachorrão"
-        },
-      ]
+      fotos: []
     }
+  },
+  created(){
+    this.$http.get('http://localhost:3000/v1/fotos')
+      .then(res => {
+        this.fotos = res.body;
+      }, err => console.log(err));
   }
 }
 </script>
