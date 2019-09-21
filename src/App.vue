@@ -1,34 +1,31 @@
 <template>
-  <div id="app">
-    <p>{{mensagem}}</p>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Olá mundo"/>
+  <div>
+    <h1>{{ titulo }}</h1>
+    <ul>
+      <li v-for="(foto, index) in fotos" :key="index"><img :src="foto.url" :alt="foto.titulo"></li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  },
-  data(){
+  data() {
     return {
-      mensagem: "Olá mundo!!!"
+      titulo: "Alura Pic",
+      fotos: [
+        {
+          url: "https://www.petz.com.br/blog/wp-content/uploads/2019/04/como-saber-se-o-cachorro-esta-com-febre-doencas.jpg",
+          titulo: "cachorro"
+        },
+        {
+          url: "https://www.petlove.com.br/dicas/wp-content/uploads/2018/05/golden-idoso.jpg",
+          titulo: "cachorrão"
+        },
+      ]
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
