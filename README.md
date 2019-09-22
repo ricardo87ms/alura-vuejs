@@ -27,3 +27,18 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Comandos executados
+
+```
+
+yarn global add @vue/cli
+
+vue create alura-vuejs
+
+yarn add vue-resource
+
+yarn add vue-router
+
+```
